@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  chartmuseum:
+    image: chartmuseum/chartmuseum:latest 
+    environment:
+    - PORT=8080
+    - STORAGE=local
+    - STORAGE_LOCAL_ROOTDIR=/storage
+    - DEBUG=true
+    ports:
+    - 8080:8080
