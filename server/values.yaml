@@ -1,0 +1,13 @@
+team: k8s-demo
+nameOverride: helm-demo
+ingress:
+  enabled: true
+  # Used to create an Ingress record.
+  hosts:
+    - helm-demo.local
+image:
+  repository: local
+  version: 1
+service:
+  internalPort: 13337
+  isAlivePath: /lol.html
