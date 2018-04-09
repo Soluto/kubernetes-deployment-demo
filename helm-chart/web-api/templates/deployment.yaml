@@ -2,12 +2,9 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "web-api.name" . }}
-  namespace: {{ .Values.team }}
+  namespace: test-1111
   labels:
     app: {{ template "web-api.name" . }}
-    {{- if .Values.enforceSingleInstance }}
-    enforceSingleInstance: "{{ .Values.enforceSingleInstance }}"
-    {{ end }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
@@ -46,9 +43,6 @@ spec:
           envFrom:
            - configMapRef:
               name: {{ template "web-api.name" . }}
-        {{- if .Values.useAirbag }}
-        {{ include "airbag-sidecar" . | indent 8 }}
-        {{- end }}
         {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
         - name: {{ toYaml .Values.imagePullSecrets }}
