@@ -1,7 +1,7 @@
 # Helm Deployment Demo
 This repo contains a full working demo of how we are using Helm for rapid Kubernetes deployment.
 Use this repo to feel how fast and simple it can be.
-To have a better understanding of the flow, check out this [Blog Post]()
+To have a better understanding of the flow, check out this [Blog Post](https://blog.solutotlv.com/deploying-kubernetes-like-a-pro/?utm_source=github)
 
 ## Structure
 * `chart-museum`: All that is required to run [Chart Museum](https://github.com/kubernetes-helm/chartmuseum) that will hold our charts.
