@@ -4,7 +4,7 @@ Use this repo to feel how fast and simple it can be.
 To have a better understanding of the flow, check out this [Blog Post]()
 
 ## Structure
-* `chart-museum`: All the is required to run [Chart Museum](https://github.com/kubernetes-helm/chartmuseum) that will hold our charts.
+* `chart-museum`: All that is required to run [Chart Museum](https://github.com/kubernetes-helm/chartmuseum) that will hold our charts.
 * `helm-chart`: All the files that are required for building the chart and publishing it to Chart Museum
 * `kubernetes`: Kubernetes file required for running the demo (create namespace and TLS secret)
 * `server`: The app that we will deploy on Kubernetes, a small web app written in [Lolcode](https://http://lolcode.org/).
@@ -13,8 +13,8 @@ To have a better understanding of the flow, check out this [Blog Post]()
 The idea is to use Helm to pack all Kubernetes configuration files.
 The developer can use the chart to publish her code into production.
 All the customization is done on `server/values.yaml`.
-To run the demo docker and Kubernetes required, for example by using minikube.
-The demo will create a namespace named `helm-demo` and will create all the artifacts in this namespace.
+Prerequisites: Docker and kubernetes (Minikube will do just fine)
+The demo will create a namespace named `helm-demo` on your cluster and will create all the artifacts in this namespace.
 
 To run the demo:
 * Run Chart Museum: `cd chart-museum` && `docker-compose up -d`
