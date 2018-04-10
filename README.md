@@ -16,13 +16,15 @@ All the customization is done on `server/values.yaml`.
 Prerequisites: Docker and kubernetes (Minikube will do just fine)
 The demo will create a namespace named `helm-demo` on your cluster and will create all the artifacts in this namespace.
 
-To run the demo:
+Preparing the environment:
 * Run Chart Museum: `cd chart-museum` && `docker-compose up -d`
 * Publish the chart: `cd ../helm-chart/web-api` && `../scripts/publish.sh 1 http://localhost:8080/`
 * Prepare Kubernetes:`cd ../../kubernetes` && `kubectl apply -f .`
+* Add Chart Museum to Helm: `helm repo add local-chart-museum http://localhost:8080`
+
+Now deploy the app:
 * Build the app so it will be available for minikube: `cd ../server` && `eval $(minikube docker-env)` && `docker build -t local/httpd:1 .`
   * If you're using something other than minikube, first publish your image to a repository.
   * Than, modify `server/values.yaml`: `image.repository` to the repository, and `image.version` to the tag.
-* Add Chart Museum to Helm: `helm repo add local-chart-museum http://localhost:8080`
 * Deploy the app: `helm upgrade --install -f values.yaml httpd local-chart-museum/web-api --wait`
 * Use curl to test the deployment (or edit `/etc/hosts`): `curl -H "Host: httpd.local" -k https://<ingress ip>/lol.html`. To get the IP run `kubectl get ingress --namespace=helm-demo`.
