@@ -5,7 +5,7 @@ ingress:
   enabled: true
   # Used to create an Ingress record.
   hosts:
-    - prodhome1loggingapi.local
+    - some-api.local
 volumeMounts:
 - name: secret-volume
   mountPath: /app/secret-volume
