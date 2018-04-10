@@ -108,7 +108,7 @@ metadata:
 
 spec:
   rules:
-    - host: prodhome1loggingapi.local
+    - host: some-api.local
       http:
         paths:
           - path: /
@@ -118,7 +118,7 @@ spec:
 
   tls:
     - hosts:
-      - prodhome1loggingapi.local
+      - some-api.local
 
       secretName: cert.local
 ---
