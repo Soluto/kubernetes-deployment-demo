@@ -1,4 +1,4 @@
-team: k8s-demo
+team: helm-demo
 nameOverride: helm-demo
 ingress:
   enabled: true
