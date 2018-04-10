@@ -4,7 +4,7 @@ install:
   - curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get > get_helm.sh && chmod 700 get_helm.sh && ./get_helm.sh
   - helm init -c
   - helm plugin install https://github.com/technosophos/helm-template
-  - wget https://github.com/garethr/kubetest/releases/download/0.1.1/kubetest-linux-amd64.tar.gz && tar xf kubetest-linux-amd64.tar.gz && cp kubetest /usr/local/bin
+  - wget https://github.com/garethr/kubetest/releases/download/0.1.1/kubetest-linux-amd64.tar.gz && tar xf kubetest-linux-amd64.tar.gz
 
 script:
   - cd helm-chart/web-api
