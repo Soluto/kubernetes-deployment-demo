@@ -21,11 +21,11 @@ def test_for_env_from():
 
 def test_for_ingress_host():
     if spec["kind"] == "Ingress":
-        assert_equal(spec["spec"]["rules"][0]["host"], "prodhome1loggingapi.local", "host should exist with the given dns")
+        assert_equal(spec["spec"]["rules"][0]["host"], "some-api.local", "host should exist with the given dns")
 
 def test_for_ingress_host_tls():
     if spec["kind"] == "Ingress":
-        assert_equal(spec["spec"]["tls"][0]["hosts"][0], "prodhome1loggingapi.local", "host should exist with tls settings")
+        assert_equal(spec["spec"]["tls"][0]["hosts"][0], "some-api.local", "host should exist with tls settings")
         assert_equal(spec["spec"]["tls"][0]["secretName"], "cert.local", "host should exist with the tls secret")
 
 def test_for_config_data():
