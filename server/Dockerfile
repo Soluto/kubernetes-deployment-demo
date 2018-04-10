@@ -7,4 +7,6 @@ WORKDIR /app
 
 COPY . /app
 
+EXPOSE 13337
+
 CMD lci httpd.lol

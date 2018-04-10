@@ -1,10 +1,10 @@
 team: helm-demo
-nameOverride: helm-demo
+nameOverride: httpd
 ingress:
   enabled: true
   # Used to create an Ingress record.
   hosts:
-    - helm-demo.local
+    - httpd.local
 image:
   repository: local
   version: 1
